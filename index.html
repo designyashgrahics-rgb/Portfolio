@@ -1,0 +1,1770 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adityasingh Auchoybur — Portfolio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#f5f1ea;
+  --cream2:#ede8df;
+  --cream3:#e3ddd3;
+  --parchment:#faf8f4;
+  --ink:#1c1a17;
+  --ink2:#3d3a34;
+  --ink3:#7a7168;
+  --terra:#9c0000;
+  --terra2:#880101;
+  --terra3:#ff2f2f;
+  --terra-pale:#f5e8e2;
+  --line:rgba(28,26,23,0.1);
+  --line2:rgba(28,26,23,0.06);
+  --ff-disp:'Cormorant Garamond',Georgia,serif;
+  --ff-body:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);background:var(--parchment);color:var(--ink);font-weight:300;line-height:1.65;overflow-x:hidden;}
+@media(hover:hover){body{cursor:none;}}
+
+/* CURSOR */
+.cur{width:7px;height:7px;background:var(--terra);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s,background .2s;display:none;}
+.cur-r{width:30px;height:30px;border:1px solid var(--terra);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .1s ease-out,top .1s ease-out,width .2s,height .2s;opacity:.35;display:none;}
+@media(hover:hover){.cur,.cur-r{display:block;}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.3rem 3.5rem;background:rgba(250,248,244,0.9);backdrop-filter:blur(16px);border-bottom:.5px solid var(--line);}
+.nav-logo{font-family:var(--ff-disp);font-size:1.05rem;font-weight:600;letter-spacing:.02em;color:var(--ink);text-decoration:none;}
+.nav-logo em{font-style:italic;color:var(--terra);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:var(--ff-body);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--terra);}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:blink 2.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+/* Hamburger */
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s;}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.nav-mobile-overlay{display:none;position:fixed;inset:0;top:56px;background:rgba(250,248,244,0.97);backdrop-filter:blur(20px);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.nav-mobile-overlay.open{display:flex;}
+.nav-mobile-overlay a{font-family:var(--ff-body);font-size:1rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);text-decoration:none;}
+.nav-mobile-overlay a:hover{color:var(--terra);}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 3.5rem 4rem;position:relative;overflow:hidden;background:var(--parchment);}
+
+/* Texture grain overlay */
+#hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;}
+
+/* Big background initial */
+.hero-bg-letter{position:absolute;right:-0.08em;bottom:-.12em;font-family:var(--ff-disp);font-size:clamp(22rem,45vw,46rem);font-weight:600;font-style:italic;line-height:1;color:transparent;-webkit-text-stroke:.5px var(--cream3);pointer-events:none;user-select:none;letter-spacing:-.04em;z-index:0;}
+
+/* Terracotta accent bar top right */
+.hero-accent-bar{position:absolute;top:0;right:0;width:3px;height:35vh;background:var(--terra);}
+
+.hero-tag{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem;position:relative;z-index:1;}
+.hero-tag-line{width:2.5rem;height:1px;background:var(--terra);}
+.hero-tag span{font-family:var(--ff-body);font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);}
+
+h1.hero-name{font-family:var(--ff-disp);font-size:clamp(4.5rem,9.5vw,10rem);font-weight:300;line-height:.9;letter-spacing:-.025em;margin-bottom:.4rem;position:relative;z-index:1;color:var(--ink);}
+h1.hero-name .italic{font-style:italic;font-weight:300;color:var(--ink2);}
+
+.hero-role{font-family:var(--ff-disp);font-size:clamp(1.6rem,3.5vw,3.2rem);font-weight:300;font-style:italic;color:var(--ink3);margin-bottom:3rem;position:relative;z-index:1;letter-spacing:-.01em;}
+.hero-role strong{font-style:normal;font-weight:600;color:var(--terra);}
+
+.hero-bottom{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:3rem;border-top:.5px solid var(--line);padding-top:1.5rem;position:relative;z-index:1;}
+.hb-stat{text-align:center;}
+.hb-stat-n{font-family:var(--ff-disp);font-size:2.2rem;font-weight:600;color:var(--terra);line-height:1;}
+.hb-stat-l{font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-top:.2rem;}
+.hb-desc{font-size:.8rem;color:var(--ink3);line-height:1.75;max-width:42ch;}
+.hb-contact{text-align:right;font-size:.75rem;color:var(--ink3);line-height:2.1;}
+.hb-contact a{color:var(--terra);text-decoration:none;font-weight:500;}
+
+/* SECTION TEMPLATE */
+section.pg{padding:7rem 3.5rem;border-top:.5px solid var(--line);}
+.s-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:4.5rem;}
+.s-eyebrow-num{font-family:var(--ff-disp);font-size:.85rem;font-style:italic;color:var(--terra);}
+.s-eyebrow-line{width:2rem;height:.5px;background:var(--terra);opacity:.4;}
+.s-eyebrow-title{font-family:var(--ff-disp);font-size:clamp(2.5rem,5.5vw,4.8rem);font-weight:300;letter-spacing:-.025em;line-height:.95;color:var(--ink);}
+.s-eyebrow-title em{font-style:italic;color:var(--ink3);}
+
+/* ABOUT */
+#about{background:var(--parchment);}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:5rem;align-items:start;}
+.about-quote{font-family:var(--ff-disp);font-size:clamp(1.3rem,2.2vw,1.85rem);font-weight:300;line-height:1.5;color:var(--ink2);margin-bottom:2rem;padding-bottom:2rem;border-bottom:.5px solid var(--line);}
+.about-quote strong{font-weight:600;color:var(--terra);}
+.about-body{font-size:.82rem;font-weight:300;color:var(--ink3);line-height:1.9;margin-bottom:1rem;}
+.skills-wrap{margin-top:1.8rem;padding-top:1.8rem;border-top:.5px solid var(--line2);}
+.skill-tag{display:inline-block;font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:.5px solid var(--line);color:var(--ink3);padding:3px 10px;margin:0 4px 5px 0;transition:border-color .2s,color .2s;}
+.skill-tag:hover{border-color:var(--terra);color:var(--terra);}
+
+/* Stats sidebar */
+.about-sidebar{}
+.stat-row{display:flex;flex-direction:column;padding:1.4rem 0;border-bottom:.5px solid var(--line);}
+.stat-row:first-child{border-top:.5px solid var(--line);}
+.stat-row-n{font-family:var(--ff-disp);font-size:3rem;font-weight:600;color:var(--terra);line-height:1;margin-bottom:.2rem;}
+.stat-row-l{font-size:.62rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);}
+
+/* MARQUEE */
+.marquee{padding:.7rem 0;overflow:hidden;background:var(--cream2);border-top:.5px solid var(--line);border-bottom:.5px solid var(--line);}
+.marquee-track{display:flex;gap:2.5rem;white-space:nowrap;animation:roll 28s linear infinite;}
+.marquee-track span{font-size:.62rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);}
+.marquee-track .sep{color:var(--terra);opacity:.5;}
+@keyframes roll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* TEMPLE */
+#temple{background:var(--cream);}
+
+.temple-intro-block{display:grid;grid-template-columns:1fr 1.8fr;gap:0;border:.5px solid var(--line);margin-bottom:2px;overflow:hidden;}
+.tib-left{padding:3rem 2.5rem;border-right:.5px solid var(--line);background:var(--terra);display:flex;flex-direction:column;justify-content:space-between;}
+.tib-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,241,234,.6);margin-bottom:1rem;}
+.tib-years{font-family:var(--ff-disp);font-size:clamp(5rem,10vw,8rem);font-weight:300;font-style:italic;line-height:.9;color:var(--parchment);}
+.tib-sub{font-family:var(--ff-disp);font-size:1rem;font-style:italic;color:rgba(245,241,234,.7);margin-top:1rem;}
+.tib-sectors{margin-top:2rem;display:flex;flex-direction:column;gap:.3rem;}
+.tib-sector{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,234,.5);}
+
+.tib-right{padding:3rem 2.5rem;background:var(--parchment);}
+.tib-roles{display:flex;flex-direction:column;gap:0;}
+.tib-role{padding:1.5rem 0;border-bottom:.5px solid var(--line);}
+.tib-role:first-child{padding-top:0;}
+.tib-role:last-child{border-bottom:none;padding-bottom:0;}
+.tib-role-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.35rem;}
+.tib-role-title{font-family:var(--ff-disp);font-size:1.15rem;font-weight:600;color:var(--ink);}
+.tib-role-period{font-size:.62rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);white-space:nowrap;}
+.tib-role-desc{font-size:.78rem;font-weight:300;color:var(--ink3);line-height:1.75;}
+
+/* Temple project cards */
+.temple-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);}
+.tc{background:var(--parchment);display:flex;flex-direction:column;overflow:hidden;transition:background .25s;}
+.tc:hover{background:var(--cream);}
+.tc-img{aspect-ratio:4/3;background:var(--cream2);display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:.5px solid var(--line);transition:background .25s;}
+.tc:hover .tc-img{background:var(--cream3);}
+.tc-img-ph{text-align:center;padding:1.5rem;}
+.tc-img-ph .plus-icon{width:42px;height:42px;border:.5px dashed var(--ink3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .6rem;font-size:1.2rem;color:var(--ink3);opacity:.4;}
+.tc-img-ph p{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);opacity:.4;}
+.tc-body{padding:2rem 1.75rem;flex:1;display:flex;flex-direction:column;gap:.75rem;}
+.tc-tag{font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);}
+.tc-name{font-family:var(--ff-disp);font-size:1.15rem;font-weight:600;line-height:1.15;color:var(--ink);}
+.tc-desc{font-size:.76rem;font-weight:300;color:var(--ink3);line-height:1.8;flex:1;}
+.tc-result{margin-top:auto;padding-top:1rem;border-top:.5px solid var(--line2);display:flex;gap:.6rem;align-items:flex-start;}
+.tc-result-bar{width:2px;background:var(--terra);flex-shrink:0;margin-top:.2rem;align-self:stretch;opacity:.5;}
+.tc-result p{font-family:var(--ff-disp);font-size:.82rem;font-style:italic;color:var(--ink2);line-height:1.5;}
+
+/* Temple impact strip */
+.temple-impact{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);margin-top:2px;}
+.ti-box{background:var(--terra-pale);padding:2rem 1.5rem;text-align:center;}
+.ti-n{font-family:var(--ff-disp);font-size:3rem;font-weight:600;color:var(--terra);line-height:1;margin-bottom:.3rem;}
+.ti-l{font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);}
+
+/* OTHER WORK */
+#work{background:var(--parchment);}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);}
+.wk{background:var(--parchment);overflow:hidden;transition:background .25s;}
+.wk:hover{background:var(--cream);}
+.wk-img{aspect-ratio:16/10;background:var(--cream2);display:flex;align-items:center;justify-content:center;border-bottom:.5px solid var(--line);}
+.wk-img-ph{text-align:center;}
+.wk-img-ph .plus{display:block;font-family:var(--ff-disp);font-size:2rem;color:var(--ink3);opacity:.2;margin-bottom:.3rem;}
+.wk-img-ph p{font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);opacity:.3;}
+.wk-body{padding:2.5rem 2rem;}
+.wk-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;}
+.wk-client{font-size:.6rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);}
+.wk-year{font-size:.6rem;font-weight:400;letter-spacing:.1em;color:var(--ink3);}
+.wk-title{font-family:var(--ff-disp);font-size:1.4rem;font-weight:600;line-height:1.1;color:var(--ink);margin-bottom:.6rem;}
+.wk-desc{font-size:.77rem;font-weight:300;color:var(--ink3);line-height:1.8;margin-bottom:1rem;}
+.wk-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.wk-tag{font-size:.58rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:.5px solid var(--line);color:var(--ink3);padding:3px 9px;}
+
+/* SERVICES */
+#services{background:var(--cream);}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);}
+.svc{background:var(--parchment);padding:2.5rem 2rem;transition:background .25s;}
+.svc:hover{background:var(--cream2);}
+.svc-n{font-family:var(--ff-disp);font-size:2.5rem;font-style:italic;font-weight:300;color:var(--terra);opacity:.35;line-height:1;margin-bottom:1rem;}
+.svc-title{font-family:var(--ff-disp);font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:.5rem;line-height:1.2;}
+.svc-desc{font-size:.75rem;font-weight:300;color:var(--ink3);line-height:1.8;}
+
+/* CONTACT */
+#contact{background:var(--parchment);}
+.contact-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:6rem;align-items:start;}
+.contact-headline{font-family:var(--ff-disp);font-size:clamp(2.5rem,5.5vw,5rem);font-weight:300;line-height:.95;letter-spacing:-.025em;color:var(--ink);margin-bottom:1.5rem;}
+.contact-headline em{font-style:italic;color:var(--terra);}
+.contact-sub{font-size:.8rem;font-weight:300;color:var(--ink3);line-height:1.85;max-width:38ch;margin-bottom:2.5rem;}
+.cta-btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2.2rem;background:var(--terra);color:var(--parchment);font-family:var(--ff-body);font-size:.65rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .2s;}
+.cta-btn:hover{background:var(--terra2);transform:translateY(-2px);}
+.cta-btn::after{content:'↗';font-size:.9rem;}
+
+.contact-details{}
+.cd-item{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:.5px solid var(--line);}
+.cd-item:first-child{border-top:.5px solid var(--line);}
+.cd-key{font-size:.6rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);}
+.cd-val{font-size:.78rem;font-weight:300;color:var(--ink2);}
+.cd-val a{color:var(--terra);text-decoration:none;}
+.avail{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:var(--terra-pale);color:var(--terra);padding:3px 10px;border:.5px solid rgba(184,92,56,.2);}
+
+/* FOOTER */
+footer{border-top:.5px solid var(--line);background:var(--cream2);padding:1.5rem 3.5rem;display:flex;justify-content:space-between;align-items:center;}
+.ft-name{font-family:var(--ff-disp);font-size:.9rem;font-style:italic;color:var(--ink3);}
+.ft-r{font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);}
+
+/* PROJECT / SECTION IMAGES */
+.pvs-cell img,.tc-img img,.wk-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .55s ease,opacity .4s ease;
+  opacity:1;
+}
+.pvs-cell:hover img,.tc:hover .tc-img img,.wk:hover .wk-img img{transform:scale(1.04);}
+.tc-img{overflow:hidden;}
+
+/* IMGUR GALLERY EMBED */
+.imgur-gallery-wrap{width:100%;background:rgba(0,0,0,.25);overflow:hidden;min-height:520px;display:flex;flex-direction:column;}
+.imgur-gallery-wrap blockquote{margin:0;padding:0;flex:1;}
+.imgur-gallery-wrap blockquote a{display:none;}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}
+.fi.on{opacity:1;transform:none;}
+.fi.d1{transition-delay:.1s;} .fi.d2{transition-delay:.2s;} .fi.d3{transition-delay:.3s;}
+
+/* ── PORTFOLIO SHOWCASE ────────────────────────────────────── */
+#projects{background:var(--ink);}
+#projects .s-eyebrow-num{color:var(--terra2);}
+#projects .s-eyebrow-title{color:var(--parchment);}
+#projects .s-eyebrow-title em{color:var(--terra3);}
+#projects .s-eyebrow-line{background:var(--terra2);}
+
+/* Project entry */
+.proj{border-top:.5px solid rgba(255,255,255,.08);padding:5.5rem 0 0;}
+.proj:first-of-type{border-top:none;padding-top:3rem;}
+
+/* Header row: category label + year tag */
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:3.5rem;}
+.proj-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--terra3);padding-bottom:.5rem;border-bottom:.5px solid rgba(255,255,255,.12);display:inline-flex;align-items:center;gap:.75rem;}
+.proj-label::before{content:'';width:1.5rem;height:1px;background:var(--terra);}
+.proj-year-tag{font-family:var(--ff-disp);font-size:.75rem;font-style:italic;color:rgba(245,241,234,.35);white-space:nowrap;}
+
+/* Title + description split */
+.proj-title-row{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start;margin-bottom:4rem;}
+.proj-title{font-family:var(--ff-disp);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:300;line-height:.92;letter-spacing:-.03em;color:var(--parchment);}
+.proj-title em{font-style:italic;color:var(--terra3);}
+.proj-meta-col{}
+.proj-tagline{font-family:var(--ff-disp);font-size:1.1rem;font-style:italic;font-weight:300;color:rgba(245,241,234,.55);margin-bottom:1.2rem;line-height:1.4;}
+.proj-desc{font-size:.78rem;font-weight:300;color:rgba(245,241,234,.45);line-height:1.9;margin-bottom:1.5rem;}
+.proj-pills{display:flex;flex-wrap:wrap;gap:5px;}
+.proj-pill{font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border:.5px solid rgba(255,255,255,.12);color:rgba(245,241,234,.4);padding:3px 10px;}
+
+/* Mockup / visual strip */
+.proj-visual-strip{display:grid;gap:2px;margin-bottom:3.5rem;}
+.proj-visual-strip.cols-3{grid-template-columns:1.6fr 1fr 1fr;}
+.proj-visual-strip.cols-2{grid-template-columns:1fr 1fr;}
+.proj-visual-strip.cols-1{grid-template-columns:1fr;}
+.pvs-cell{aspect-ratio:4/3;background:var(--ink2);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;overflow:hidden;position:relative;}
+.pvs-cell.tall{aspect-ratio:3/4;}
+.pvs-cell.wide{aspect-ratio:16/7;}
+.pvs-hero{aspect-ratio:16/7;}
+/* Inner placeholder */
+.pvs-ph{text-align:center;pointer-events:none;}
+.pvs-ph-icon{width:44px;height:44px;border:.5px dashed rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .6rem;font-size:1.1rem;color:rgba(255,255,255,.15);}
+.pvs-ph p{font-size:.56rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.15);}
+/* Tinted backgrounds per project */
+.pvs-cell.bg-temple{background:#2a2421;}
+.pvs-cell.bg-rentnext{background:#001625;}
+.pvs-cell.bg-rk{background:#2b1117;}
+.pvs-cell.bg-misc{background:#1a1a1a;}
+/* Overlay label inside cell */
+.pvs-overlay{position:absolute;bottom:1rem;left:1rem;right:1rem;display:flex;justify-content:space-between;align-items:flex-end;}
+.pvs-ol{font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;}
+.pvs-ol.temple-col{color:rgba(184,92,56,.6);}
+.pvs-ol.rn-col{color:rgba(0,200,180,.4);}
+.pvs-ol.rk-col{color:rgba(180,50,50,.5);}
+
+/* Bottom info bar: design approach + color swatches */
+.proj-info-bar{display:grid;grid-template-columns:1.5fr 1fr;gap:0;border:.5px solid rgba(255,255,255,.07);margin-bottom:2px;}
+.pib-approach{padding:2.5rem 2.5rem;border-right:.5px solid rgba(255,255,255,.07);}
+.pib-approach-label{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--terra3);margin-bottom:1.2rem;}
+.pib-approach-grid{display:flex;flex-direction:column;gap:.9rem;}
+.pib-row{display:flex;gap:1.2rem;align-items:flex-start;}
+.pib-row-key{font-family:var(--ff-disp);font-size:.9rem;font-style:italic;color:rgba(245,241,234,.3);min-width:7rem;line-height:1.4;}
+.pib-row-val{font-size:.73rem;font-weight:300;color:rgba(245,241,234,.45);line-height:1.7;}
+
+.pib-palette{padding:2.5rem 2.5rem;}
+.pib-palette-label{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--terra3);margin-bottom:1.2rem;}
+.palette-swatches{display:flex;flex-direction:column;gap:.75rem;}
+.swatch-row{display:flex;align-items:center;gap:1rem;}
+.swatch-chip{width:28px;height:28px;border-radius:3px;flex-shrink:0;}
+.swatch-info{}
+.swatch-name{font-family:var(--ff-disp);font-size:.85rem;font-weight:400;color:rgba(245,241,234,.7);line-height:1;}
+.swatch-hex{font-size:.58rem;font-weight:500;letter-spacing:.12em;color:rgba(245,241,234,.28);margin-top:.15rem;}
+
+/* Result strip */
+.proj-result{background:var(--ink2);padding:2rem 2.5rem;display:flex;align-items:center;gap:3rem;border:.5px solid rgba(255,255,255,.06);}
+.pr-bar{width:2px;height:2.8rem;background:var(--terra);opacity:.4;flex-shrink:0;}
+.pr-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--terra3);margin-bottom:.4rem;}
+.pr-text{font-family:var(--ff-disp);font-size:1rem;font-style:italic;font-weight:300;color:rgba(245,241,234,.6);line-height:1.45;}
+
+/* Logotypes grid */
+.logotypes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.lt-cell{aspect-ratio:1/1;background:var(--ink2);display:flex;align-items:center;justify-content:center;padding:0;position:relative;overflow:hidden;transition:background .25s;}
+.lt-cell:hover{background:#282520;}
+.lt-cell-label{position:absolute;bottom:.75rem;left:.75rem;font-size:.55rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,234,.25);z-index:2;}
+/* Alternate backgrounds for variety */
+.lt-cell:nth-child(2){background:#1a1d2e;}
+.lt-cell:nth-child(3){background:#1e1c1a;}
+
+.lt-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease;}
+.lt-cell:hover img{transform:scale(1.04);}
+
+.lt-ph{text-align:center;}
+.lt-ph-ring{width:52px;height:52px;border:.5px dashed rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .5rem;}
+.lt-ph-ring span{font-family:var(--ff-disp);font-size:1.2rem;font-style:italic;color:rgba(255,255,255,.15);}
+.lt-ph p{font-size:.56rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.15);}
+
+/* Poster + campaign collage strip */
+.collage-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;}
+.cs-cell{aspect-ratio:1/1;background:var(--ink2);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.cs-cell:nth-child(1){background:#111;}
+.cs-cell:nth-child(2){background:#0d0d0d;}
+.cs-cell:nth-child(3){background:#161210;}
+.cs-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease;}
+.cs-cell:hover img{transform:scale(1.04);}
+.cs-overlay{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.6));}
+.cs-overlay-label{font-size:.54rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+
+/* Section divider inside dark section */
+.proj-divider{height:.5px;background:rgba(255,255,255,.05);margin:5rem 0 0;}
+
+@media(max-width:860px){
+  .proj-title-row,.proj-info-bar{grid-template-columns:1fr;}
+  .pib-approach{border-right:none;border-bottom:.5px solid rgba(255,255,255,.07);}
+  .proj-visual-strip.cols-3{grid-template-columns:1fr 1fr;}
+  .logotypes-grid,.collage-strip{grid-template-columns:1fr 1fr;}
+  .proj-header{flex-direction:column;gap:.5rem;}
+}
+
+/* VIDEO WORKS */
+#video-works{background:var(--ink);}
+#video-works .s-eyebrow-num{color:var(--terra2);}
+#video-works .s-eyebrow-title{color:var(--parchment);}
+#video-works .s-eyebrow-title em{color:var(--terra3);}
+#video-works .s-eyebrow-line{background:var(--terra2);}
+
+.vw-client-block{margin-bottom:4px;}
+.vw-client-header{display:flex;justify-content:space-between;align-items:flex-end;padding:2.2rem 2.5rem;background:var(--ink2);border-left:2px solid var(--terra);}
+.vwch-left{}
+.vw-client-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--terra3);margin-bottom:.35rem;}
+.vw-client-name{font-family:var(--ff-disp);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:300;color:var(--parchment);line-height:1;}
+.vw-client-name em{font-style:italic;color:var(--terra3);}
+.vwch-right{display:flex;align-items:center;gap:.5rem;font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,234,.3);}
+.vw-count-badge{background:var(--terra);color:var(--parchment);font-size:.6rem;font-weight:500;letter-spacing:.1em;padding:3px 9px;font-family:var(--ff-body);}
+
+.vw-grid{display:grid;gap:2px;background:var(--line);}
+.vw-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+.vw-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+.vw-grid.cols-1{grid-template-columns:1fr;}
+
+.vw-card{background:var(--ink2);display:flex;flex-direction:column;overflow:hidden;position:relative;transition:background .25s;}
+.vw-card:hover{background:#282420;}
+.vw-embed{position:relative;width:100%;padding-bottom:56.25%;background:#000;overflow:hidden;}
+/* When .vw-embed is a direct grid child (wide cards), override padding trick with aspect-ratio */
+.vw-card[style*="grid-template-columns"] .vw-embed{padding-bottom:0;aspect-ratio:16/9;height:auto;}
+.vw-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+
+/* Tap-to-play poster */
+.vw-poster{position:absolute;inset:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#000;}
+.vw-poster img{width:100%;height:100%;object-fit:cover;opacity:.75;transition:opacity .3s;}
+.vw-poster:hover img{opacity:.9;}
+.vw-poster-btn{position:absolute;width:60px;height:60px;border-radius:50%;background:rgba(184,92,56,.9);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s;}
+.vw-poster:hover .vw-poster-btn{transform:scale(1.1);background:var(--terra);}
+.vw-poster-btn svg{fill:#fff;width:22px;height:22px;margin-left:4px;}
+
+/* placeholder shown before vimeo id is added */
+.vw-embed-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;background:var(--ink2);}
+.vw-play-icon{width:50px;height:50px;border:.5px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.vw-play-icon svg{fill:rgba(255,255,255,.25);width:18px;height:18px;margin-left:3px;}
+.vw-embed-ph p{font-size:.56rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.18);}
+
+.vw-body{padding:1.5rem 1.75rem;flex:1;display:flex;flex-direction:column;gap:.5rem;}
+.vw-num{font-family:var(--ff-disp);font-size:.75rem;font-style:italic;color:var(--terra3);opacity:.6;}
+.vw-title{font-family:var(--ff-disp);font-size:1.05rem;font-weight:600;color:var(--parchment);line-height:1.2;}
+.vw-desc{font-size:.72rem;font-weight:300;color:rgba(245,241,234,.4);line-height:1.8;margin-top:.2rem;}
+.vw-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:auto;padding-top:1rem;font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra3);text-decoration:none;border-top:.5px solid rgba(255,255,255,.06);transition:color .2s;}
+.vw-link:hover{color:var(--terra2);}
+.vw-link::after{content:'↗';font-size:.8rem;}
+
+/* Vimeo notice strip */
+.vw-notice{padding:1.5rem 2.5rem;background:rgba(184,92,56,.08);border-top:.5px solid rgba(184,92,56,.2);display:flex;align-items:center;gap:1rem;margin-top:2px;}
+.vw-notice-icon{width:6px;height:6px;border-radius:50%;background:var(--terra);flex-shrink:0;}
+.vw-notice p{font-size:.65rem;font-weight:300;color:rgba(245,241,234,.35);line-height:1.6;}
+.vw-notice a{color:var(--terra3);text-decoration:none;}
+.vw-notice a:hover{text-decoration:underline;}
+
+/* PDF / PRINT */
+@media print{
+  body{cursor:default;}
+  .cur,.cur-r,nav,.marquee{display:none!important;}
+  section.pg{padding:3rem 2.5rem;}
+  #hero{min-height:auto;padding:4rem 2.5rem 3rem;}
+  .hero-bg-letter,.hero-accent-bar{display:none;}
+  .temple-cards,.work-grid,.svc-grid,.logotypes-grid,.collage-strip{grid-template-columns:1fr 1fr;}
+  .temple-impact,.temple-intro-block,.about-grid,.contact-layout,.proj-title-row,.proj-info-bar{grid-template-columns:1fr;}
+  .proj-visual-strip.cols-3{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:860px){
+  nav{padding:1rem 1.25rem;}
+  .nav-links{display:none;}
+  .nav-dot{display:none;}
+  .nav-burger{display:flex;}
+  section.pg{padding:4rem 1.25rem;}
+  #hero{padding:6rem 1.25rem 3rem;}
+  .about-grid,.temple-intro-block,.temple-impact,.work-grid,.svc-grid,.contact-layout{grid-template-columns:1fr;}
+  .temple-cards{grid-template-columns:1fr;}
+  .hero-bottom{grid-template-columns:1fr;gap:1rem;text-align:left;}
+  .hb-contact{text-align:left;}
+  footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.5rem 1.25rem;}
+  /* Projects */
+  .proj-title-row,.proj-info-bar{grid-template-columns:1fr;}
+  .pib-approach{border-right:none;border-bottom:.5px solid rgba(255,255,255,.07);}
+  .proj-visual-strip.cols-3{grid-template-columns:1fr 1fr;}
+  .proj-visual-strip.cols-2{grid-template-columns:1fr;}
+  .proj-header{flex-direction:column;gap:.5rem;}
+  .logotypes-grid,.collage-strip{grid-template-columns:1fr 1fr;}
+  /* Vimeo wide card layout */
+  .vw-card[style*="grid-template-columns"],.vw-card-wide{display:flex!important;flex-direction:column;}
+  .vw-card-wide .vw-embed{padding-bottom:56.25%;height:0;aspect-ratio:unset;position:relative;}
+  .vw-card-wide .vw-embed iframe{position:absolute;inset:0;width:100%;height:100%;}
+  /* Video grid */
+  .vw-grid.cols-3{grid-template-columns:1fr;}
+  .vw-grid.cols-2{grid-template-columns:1fr;}
+  .vw-client-header{flex-direction:column;gap:.75rem;align-items:flex-start;}
+  /* Proj result */
+  .proj-result{flex-wrap:wrap;gap:1rem;}
+  /* Temple intro */
+  .tib-left{padding:2rem 1.5rem;}
+  .tib-right{padding:2rem 1.5rem;}
+  /* Contact */
+  .contact-layout{gap:3rem;}
+}
+@media(max-width:480px){
+  .logotypes-grid,.collage-strip{grid-template-columns:1fr;}
+  .proj-visual-strip.cols-3{grid-template-columns:1fr;}
+  h1.hero-name{font-size:clamp(3rem,14vw,5rem);}
+  .hero-role{font-size:clamp(1.2rem,5vw,2rem);}
+  .s-eyebrow-title{font-size:clamp(2rem,9vw,3rem);}
+  .temple-impact{grid-template-columns:1fr 1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+}
+
+/* DIGITAL EXPERIENCES */
+#digital-experiences{background:var(--cream2);}
+.de-intro{max-width:780px;margin-bottom:4rem;}
+.de-intro-tag{font-size:.62rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:.9rem;}
+.de-intro-headline{font-family:var(--ff-disp);font-size:clamp(1.2rem,2.2vw,1.75rem);font-weight:300;font-style:italic;color:var(--ink2);line-height:1.5;margin-bottom:.8rem;}
+.de-intro-body{font-size:.8rem;font-weight:300;color:var(--ink3);line-height:1.9;}
+.de-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.de-card{background:var(--parchment);display:flex;flex-direction:column;overflow:hidden;position:relative;transition:background .25s;}
+.de-card:hover{background:#f0ece4;}
+.de-card-img{position:relative;width:100%;aspect-ratio:4/3;background:var(--cream3);overflow:hidden;}
+.de-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease;}
+.de-card:hover .de-card-img img{transform:scale(1.04);}
+/* Placeholder shown when no image src */
+.de-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;background:var(--cream3);}
+.de-ph-ring{width:52px;height:52px;border:.5px dashed rgba(28,26,23,.14);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.de-ph-ring span{font-family:var(--ff-disp);font-size:1.2rem;font-style:italic;color:rgba(28,26,23,.2);}
+.de-ph p{font-size:.55rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(28,26,23,.2);text-align:center;max-width:80px;}
+.de-card-body{padding:1.5rem 1.6rem;flex:1;display:flex;flex-direction:column;gap:.35rem;border-top:.5px solid var(--line);}
+.de-card-num{font-family:var(--ff-disp);font-size:.75rem;font-style:italic;color:var(--terra);opacity:.7;}
+.de-card-title{font-family:var(--ff-disp);font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.2;}
+.de-card-desc{font-size:.72rem;font-weight:300;color:var(--ink3);line-height:1.8;margin-top:.2rem;}
+.de-card-tag{display:inline-block;margin-top:auto;padding-top:.85rem;font-size:.55rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);border-top:.5px solid var(--line2);}
+/* Featured wide card (spans 2 cols) */
+.de-card.de-wide{grid-column:span 2;}
+.de-card.de-wide .de-card-img{aspect-ratio:16/7;}
+@media(max-width:860px){
+  .de-grid{grid-template-columns:1fr 1fr;}
+  .de-card.de-wide{grid-column:span 2;}
+}
+@media(max-width:560px){
+  .de-grid{grid-template-columns:1fr;}
+  .de-card.de-wide{grid-column:span 1;}
+}
+</style>
+</head>
+
+<body>
+<div class="cur" id="cur"></div>
+<div class="cur-r" id="curR"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">Adityasingh <em>Auchoybur</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#magazine">Magazine</a></li>
+    <li><a href="#digital-experiences">Digital</a></li>
+    <li><a href="#video-works">Video Works</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-dot" title="Open to opportunities"></div>
+  <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-overlay" id="navOverlay">
+  <a href="#about" class="nav-mo-link">About</a>
+  <a href="#projects" class="nav-mo-link">Projects</a>
+  <a href="#magazine" class="nav-mo-link">Magazine</a>
+  <a href="#digital-experiences" class="nav-mo-link">Digital</a>
+  <a href="#work" class="nav-mo-link">Work</a>
+  <a href="#video-works" class="nav-mo-link">Video Works</a>
+  <a href="#services" class="nav-mo-link">Services</a>
+  <a href="#contact" class="nav-mo-link">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-accent-bar"></div>
+  <div class="hero-bg-letter" aria-hidden="true">A</div>
+
+  <div class="hero-tag">
+    <div class="hero-tag-line"></div>
+    <span>Senior Graphic Designer &amp; Brand Strategist · Mauritius</span>
+  </div>
+
+  <h1 class="hero-name">
+    Adityasingh<br>
+    <span class="italic">Auchoybur</span>
+  </h1>
+  <p class="hero-role">Building brands that<br><strong>mean something.</strong></p>
+
+  <div class="hero-bottom">
+    <div class="hb-stat">
+      <div class="hb-stat-n">8+</div>
+      <div class="hb-stat-l">Years Experience</div>
+    </div>
+    <p class="hb-desc">Senior Graphic Designer and Brand Strategist specialising in identity systems, creative direction and visual communication across corporate, legal, business and technology sectors.</p>
+    <div class="hb-contact">
+      <div>Poste de Flacq, Mauritius</div>
+      <div><a href="mailto:designyashgrahics@gmail.com">designyashgrahics@gmail.com</a></div>
+      <div>+230 58157143</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Brand Identity</span><span class="sep">·</span>
+    <span>Creative Direction</span><span class="sep">·</span>
+    <span>Photography</span><span class="sep">·</span>
+    <span>Videography</span><span class="sep">·</span>
+    <span>Motion Graphics</span><span class="sep">·</span>
+    <span>Digital Marketing</span><span class="sep">·</span>
+    <span>Content Strategy</span><span class="sep">·</span>
+    <span>Team Leadership</span><span class="sep">·</span>
+    <span>AI Visuals</span><span class="sep">·</span>
+    <span>Brand Identity</span><span class="sep">·</span>
+    <span>Creative Direction</span><span class="sep">·</span>
+    <span>Photography</span><span class="sep">·</span>
+    <span>Videography</span><span class="sep">·</span>
+    <span>Motion Graphics</span><span class="sep">·</span>
+    <span>Digital Marketing</span><span class="sep">·</span>
+    <span>Content Strategy</span><span class="sep">·</span>
+    <span>Team Leadership</span><span class="sep">·</span>
+    <span>AI Visuals</span><span class="sep">·</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="pg" id="about">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">01</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">About <em>me</em></h2>
+  </div>
+  <div class="about-grid">
+    <div class="fi on">
+      <p class="about-quote">
+        I turn <strong>complex brand challenges</strong> into clean, powerful visual systems — built to work across any platform, format and audience.
+      </p>
+      <p class="about-body">Eight years in. More than four at Temple Group. Four sectors. One consistent thread: design that earns its place — strategic, intentional, and built to last.</p>
+      <p class="about-body">My career spans corporate identity, legal communications, hospitality branding, education marketing and technology — giving me an unusually broad perspective on how visual language creates real business impact. I've led creative teams, directed campaigns from brief to delivery, managed full production pipelines, and presented in boardrooms where brand decisions get made.</p>
+      <p class="about-body">Currently Brand &amp; Creative Lead at Temple Group, overseeing the full creative function — strategy, output, people and standards — across multiple business units.</p>
+      <div class="skills-wrap">
+        <span class="skill-tag">Brand Identity</span>
+        <span class="skill-tag">Creative Direction</span>
+        <span class="skill-tag">Digital Marketing</span>
+        <span class="skill-tag">Motion Graphics</span>
+        <span class="skill-tag">Photography</span>
+        <span class="skill-tag">Videography</span>
+        <span class="skill-tag">AI Image Generation</span>
+        <span class="skill-tag">Content Strategy</span>
+        <span class="skill-tag">Social Media</span>
+        <span class="skill-tag">Team Leadership</span>
+        <span class="skill-tag">Video Production</span>
+        <span class="skill-tag">Prompt Engineering</span>
+      </div>
+    </div>
+    <div class="fi d2 on">
+      <div class="stat-row">
+        <div class="stat-row-n">8+</div>
+        <div class="stat-row-l">Years of Experience</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-n">4+</div>
+        <div class="stat-row-l">Years at Temple Group</div>
+      </div>
+     
+      <div class="stat-row">
+        <div class="stat-row-n">4</div>
+        <div class="stat-row-l">Industry Sectors</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-n">BA</div>
+        <div class="stat-row-l">Graphic Design · UTM 2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- PORTFOLIO SHOWCASE -->
+<section class="pg" id="projects">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">03</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">Selected <em>projects</em></h2>
+  </div>
+
+  <!-- ── PROJECT 1: TEMPLE REBRAND ─────────────────────────── -->
+  <div class="proj fi on">
+    <div class="proj-header">
+      <span class="proj-label">Brand Identity · Implementation · 2024</span>
+      <span class="proj-year-tag">Strategic Rebrand</span>
+    </div>
+
+    <div class="proj-title-row">
+      <div class="proj-title">Temple<br><em>Rebrand</em></div>
+      <div class="proj-meta-col">
+        <div class="proj-tagline">A strategic brand evolution aligning Temple's visual presence with its growth and market positioning.</div>
+        <p class="proj-desc">Spanning signage, stationery, digital, and environmental design across every touchpoint — modernising Temple's identity while preserving established credibility and recognition.</p>
+        <div class="proj-pills">
+          <span class="proj-pill">Logo Refinement</span>
+          <span class="proj-pill">Brand System</span>
+          <span class="proj-pill">Signage</span>
+          <span class="proj-pill">Digital</span>
+          <span class="proj-pill">Stationery</span>
+          <span class="proj-pill">Environmental</span>
+        </div>
+      </div>
+    </div><div style="width:100%;margin-bottom:2px;background:#001625;overflow:hidden;line-height:0;">
+      <img src="images/Templerebrand.png" alt="Temple — Full Brand Portfolio" style="width:100%;height:auto;display:block;">
+    </div>
+
+    
+    
+
+    <div class="proj-info-bar">
+      <div class="pib-approach">
+        <div class="pib-approach-label">Design Approach</div>
+        <div class="pib-approach-grid">
+          <div class="pib-row">
+            <span class="pib-row-key">Logomark</span>
+            <span class="pib-row-val">Pillar structure representing strength, stability, trust, and permanence — vertical lines suggesting integrity and authority, hand-drawn curves introducing a human, approachable quality.</span>
+          </div>
+          <div class="pib-row">
+            <span class="pib-row-key">Wordmark</span>
+            <span class="pib-row-val">Clean sans-serif typography with wide letter-spacing and geometric construction. Extended tracking creates a perception of luxury and confidence.</span>
+          </div>
+          <div class="pib-row">
+            <span class="pib-row-key">Direction</span>
+            <span class="pib-row-val">Professional yet contemporary. Authoritative yet approachable. Refined, clear, and timeless.</span>
+          </div>
+        </div>
+      </div>
+      <div class="pib-palette">
+        <div class="pib-palette-label">Colour Palette</div>
+        <div class="palette-swatches">
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#383333;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Meteorite</div>
+              <div class="swatch-hex">#383333 · PANTONE 447</div>
+            </div>
+          </div>
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#661c0f;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Chocolate Drizzle</div>
+              <div class="swatch-hex">#661c0f · PANTONE 491</div>
+            </div>
+          </div>
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#b4b4b5;border:.5px solid rgba(255,255,255,.1);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Silver Mist</div>
+              <div class="swatch-hex">#b4b4b5 · PANTONE 5295</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-result">
+      <div class="pr-bar"></div>
+      <div>
+        <div class="pr-label">Result</div>
+        <div class="pr-text">A cohesive and future-ready brand identity that strengthens Temple's presence while delivering a consistent, professional experience across every touchpoint.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-divider"></div>
+
+  <!-- ── PROJECT 2: RENTNEXT ─────────────────────────────────── -->
+  <div class="proj fi d1 on">
+    <div class="proj-header">
+      <span class="proj-label">Brand Identity · Implementation · 2025</span>
+      <span class="proj-year-tag">Strategic Rebrand</span>
+    </div>
+
+    <div class="proj-title-row">
+      <div class="proj-title">RentNext<br><em>Branding</em></div>
+      <div class="proj-meta-col">
+        <div class="proj-tagline">A comprehensive rebranding initiative modernising RentNext's visual presence to reflect its industry authority.</div>
+        <p class="proj-desc">Streamlining the customer journey through a unified design language across all print, digital, and physical environments — from vehicle wraps to digital platforms.</p>
+        <div class="proj-pills">
+          <span class="proj-pill">Logo Design</span>
+          <span class="proj-pill">Brand System</span>
+          <span class="proj-pill">Print</span>
+          <span class="proj-pill">Digital</span>
+          <span class="proj-pill">Signage</span>
+          <span class="proj-pill">Uniforms</span>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div style="width:100%;margin-bottom:2px;background:#001625;overflow:hidden;line-height:0;">
+      <img src="images/rentnextrebrand.jpg" alt="RentNext — Full Brand Portfolio" style="width:100%;height:auto;display:block;">
+    </div><div class="proj-info-bar">
+      <div class="pib-approach">
+        <div class="pib-approach-label">Design Approach</div>
+        <div class="pib-approach-grid">
+          <div class="pib-row">
+            <span class="pib-row-key">Logomark</span>
+            <span class="pib-row-val">A custom wordmark designed to convey professionalism, clarity, and modernity. The typography-driven identity creates a strong and memorable brand presence while reflecting the company's commitment to reliable and hassle-free car rental services.</span>
+          </div>
+          <div class="pib-row">
+            <span class="pib-row-key">Wordmark</span>
+            <span class="pib-row-val">A modern and professional logo designed to reflect reliability, mobility, and convenience. Created to strengthen brand recognition and establish a trustworthy identity for a car rental service focused on seamless travel experiences.</span>
+          </div>
+          <div class="pib-row">
+            <span class="pib-row-key">Direction</span>
+            <span class="pib-row-val">A sleek and contemporary wordmark crafted to deliver a distinctive brand identity, combining simplicity and readability for a professional and memorable look.</span>
+          </div>
+        </div>
+      </div>
+      <div class="pib-palette">
+        <div class="pib-palette-label">Colour Palette</div>
+        <div class="palette-swatches">
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#33bfb3;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Light Sea Green</div>
+              <div class="swatch-hex">33bfb3 · Pantone 3265 C</div>
+            </div>
+          </div>
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#001f2d;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Squid Ink</div>
+              <div class="swatch-hex">#001f2d · Pantone 2965 C</div>
+            </div>
+          </div>
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#425a65;border:.5px solid rgba(255,255,255,.1);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Cadet</div>
+              <div class="swatch-hex">#425a65 · PANTONE 7545 C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-result">
+      <div class="pr-bar"></div>
+      <div>
+        <div class="pr-label">Result</div>
+        <div class="pr-text">A custom wordmark designed to convey professionalism, clarity, and modernity. The typography-driven identity creates a strong and memorable brand presence while reflecting the company's commitment to reliable and hassle-free car rental services.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-divider"></div>
+
+  <!-- ── PROJECT 2: RENTNEXT ─────────────────────────────────── -->
+  
+
+  
+
+  <!-- ── PROJECT 3: RK SNACK ─────────────────────────────────── -->
+  <div class="proj fi d1 on">
+    <div class="proj-header">
+      <span class="proj-label">Brand Identity · Implementation · 2026</span>
+      <span class="proj-year-tag">Strategic Rebrand</span>
+    </div>
+
+    <div class="proj-title-row">
+      <div class="proj-title">RK Snack<br><em>Branding</em></div>
+      <div class="proj-meta-col">
+        <div class="proj-tagline">A complete brand identity refresh redefining RK Snack's visual identity to capture the essence of authentic Mauritian cuisine.</div>
+        <p class="proj-desc">Introducing a modern yet culturally rooted design language, seamlessly applied across physical and digital touchpoints — from takeaway packaging to menu design and in-store environments.</p>
+        <div class="proj-pills">
+          <span class="proj-pill">Logo Design</span>
+          <span class="proj-pill">Packaging</span>
+          <span class="proj-pill">Menu Design</span>
+          <span class="proj-pill">Signage</span>
+          <span class="proj-pill">Apparel</span>
+          <span class="proj-pill">Social Media</span>
+        </div>
+      </div>
+    </div><div style="width:100%;margin-bottom:2px;background:#001625;overflow:hidden;line-height:0;">
+      <img src="images/rksnackrebrand.jpg" alt="RK Snack — Full Brand Portfolio" style="width:100%;height:auto;display:block;">
+    </div>
+
+    <!-- RK Snack — Image Gallery -->
+    
+    
+
+    <!-- RK Snack PDF Portfolio Showcase -->
+    
+
+    <style>
+    .rk-pdf-wrap{margin-bottom:2px;}
+    .rk-pdf-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0 .9rem;border-bottom:.5px solid rgba(255,255,255,.06);margin-bottom:2px;}
+    .rk-pdf-label{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#C4A265;}
+    .rk-pdf-hint{font-size:.58rem;font-weight:300;color:rgba(245,241,234,.25);font-style:italic;}
+    .rk-pdf-frame-outer{position:relative;width:100%;background:#2b1117;min-height:680px;overflow:hidden;}
+    .rk-pdf-iframe{width:100%;height:680px;border:none;display:block;}
+    .rk-pdf-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+    .rk-pdf-drop-zone{border:.5px dashed rgba(196,162,101,.35);padding:4rem 3rem;display:flex;flex-direction:column;align-items:center;gap:.75rem;text-align:center;transition:border-color .2s,background .2s;cursor:default;min-width:340px;}
+    .rk-pdf-drop-zone.drag-over{border-color:#C4A265;background:rgba(196,162,101,.06);}
+    .rk-pdf-icon{color:rgba(196,162,101,.5);margin-bottom:.5rem;}
+    .rk-pdf-drop-title{font-family:var(--ff-disp);font-size:1.15rem;font-weight:300;color:rgba(245,241,234,.6);}
+    .rk-pdf-drop-sub{font-size:.6rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,241,234,.25);}
+    .rk-pdf-pick-btn{display:inline-block;padding:.5rem 1.5rem;border:.5px solid rgba(196,162,101,.5);font-family:var(--ff-body);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C4A265;cursor:pointer;transition:background .2s,border-color .2s;}
+    .rk-pdf-pick-btn:hover{background:rgba(196,162,101,.1);border-color:#C4A265;}
+    .rk-pdf-drop-note{font-size:.58rem;color:rgba(245,241,234,.2);font-style:italic;max-width:30ch;line-height:1.6;}
+    .rk-pdf-controls{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;margin-top:2px;}
+    .rk-pdf-ctrl-name{font-size:.62rem;font-weight:500;letter-spacing:.1em;color:rgba(245,241,234,.4);}
+    .rk-pdf-ctrl-btn{font-family:var(--ff-body);font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,241,234,.3);background:none;border:.5px solid rgba(255,255,255,.1);padding:3px 10px;cursor:pointer;transition:color .2s,border-color .2s;}
+    .rk-pdf-ctrl-btn:hover{color:var(--terra3);border-color:var(--terra3);}
+    </style>
+
+    <script>
+    (function(){
+      const empty   = document.getElementById('rkPdfEmpty');
+      const iframe  = document.getElementById('rkPdfEmbed');
+      const input   = document.getElementById('rkPdfInput');
+      const drop    = document.getElementById('rkDropZone');
+      const ctrls   = document.getElementById('rkPdfControls');
+      const fname   = document.getElementById('rkPdfFileName');
+      const clearBtn= document.getElementById('rkPdfClear');
+
+      function loadPdf(url, name){
+        iframe.src = url;
+        empty.style.display = 'none';
+        ctrls.style.display = 'flex';
+        fname.textContent = name || 'portfolio.pdf';
+      }
+
+      // If a src was hard-coded in the iframe, show it immediately
+      if(iframe.src && iframe.src !== window.location.href){
+        empty.style.display = 'none';
+        ctrls.style.display = 'flex';
+      }
+
+      // File picker
+      input.addEventListener('change', function(){
+        const file = this.files[0];
+        if(!file) return;
+        const url = URL.createObjectURL(file);
+        loadPdf(url, file.name);
+      });
+
+      // Drag-and-drop
+      drop.addEventListener('dragover', e=>{ e.preventDefault(); drop.classList.add('drag-over'); });
+      drop.addEventListener('dragleave', ()=> drop.classList.remove('drag-over'));
+      drop.addEventListener('drop', e=>{
+        e.preventDefault();
+        drop.classList.remove('drag-over');
+        const file = e.dataTransfer.files[0];
+        if(file && file.type === 'application/pdf'){
+          loadPdf(URL.createObjectURL(file), file.name);
+        }
+      });
+
+      // Clear
+      clearBtn.addEventListener('click', ()=>{
+        iframe.src = '';
+        empty.style.display = 'flex';
+        ctrls.style.display = 'none';
+        input.value = '';
+      });
+    })();
+    </script>
+
+    <div class="proj-info-bar">
+      <div class="pib-approach">
+        <div class="pib-approach-label">Design Approach</div>
+        <div class="pib-approach-grid">
+          <div class="pib-row">
+            <span class="pib-row-key">Logomark</span>
+            <span class="pib-row-val">Chef's hat motif combined with bold initials — instantly communicating food expertise while the crown detail elevates brand perception beyond typical snack bars.</span>
+          </div>
+          <div class="pib-row">
+            <span class="pib-row-key">Palette</span>
+            <span class="pib-row-val">Deep burgundy anchors the brand with warmth and appetite appeal. Cream and kraft tones reference natural, artisanal ingredients — authentic Mauritian street food heritage.</span>
+          </div>
+          <div class="pib-row">
+            <span class="pib-row-key">Cultural Tone</span>
+            <span class="pib-row-val">Balances modern design sensibility with cultural authenticity — appealing to both local loyalists and new audiences discovering Mauritian cuisine.</span>
+          </div>
+        </div>
+      </div>
+      <div class="pib-palette">
+        <div class="pib-palette-label">Colour Palette</div>
+        <div class="palette-swatches">
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#6B1220;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Burgundy Deep</div>
+              <div class="swatch-hex">#6B1220</div>
+            </div>
+          </div>
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#F5F0E8;border:.5px solid rgba(255,255,255,.08);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Parchment Cream</div>
+              <div class="swatch-hex">#F5F0E8</div>
+            </div>
+          </div>
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#C4A265;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Kraft Tan</div>
+              <div class="swatch-hex">#C4A265</div>
+            </div>
+          </div>
+          <div class="swatch-row">
+            <div class="swatch-chip" style="background:#1A1A1A;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Charcoal</div>
+              <div class="swatch-hex">#1A1A1A</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-result">
+      <div class="pr-bar"></div>
+      <div>
+        <div class="pr-label">Result</div>
+        <div class="pr-text">A culturally resonant and visually striking identity that positions RK Snack as a modern icon of authentic Mauritian street food — cohesive across every physical and digital touchpoint.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-divider"></div>
+
+  <!-- ── PROJECT 4: LOGOTYPES + POSTERS + CAMPAIGNS ──────────── -->
+  <div class="proj fi d1 on">
+    <div class="proj-header">
+      <span class="proj-label">Brand Identity · Multi-client · 2024–2026</span>
+      <span class="proj-year-tag">Logo Design · Posters · Campaigns</span>
+    </div>
+
+    <div class="proj-title-row">
+      <div class="proj-title">Logotypes <em>&amp;</em><br>Campaigns</div>
+      <div class="proj-meta-col">
+        <div class="proj-tagline">A collection of logo designs and campaigns developed for SMEs and businesses across Mauritius and beyond.</div>
+        <p class="proj-desc">Combining strategic thinking and creative execution to produce distinctive, memorable, and effective brand identities — from eco-packaging brands to cinemas, print partners, and fashion labels.</p>
+        <div class="proj-pills">
+          <span class="proj-pill">Explast</span>
+          <span class="proj-pill">AXIA</span>
+          <span class="proj-pill">Printbox</span>
+          <span class="proj-pill">CinéZil</span>
+          <span class="proj-pill">Dreamy Destinations</span>
+          <span class="proj-pill">SmartJoe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logotypes 3-up grid — replace src="" with your JPEG paths -->
+    <div class="logotypes-grid fi on">
+      <div class="lt-cell">
+        <img src="images/explast-1.png" alt="Explast logo">
+        <span class="lt-cell-label">Explast · Eco Packaging</span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/explast-2.png" alt="Explast logo">
+        <span class="lt-cell-label">Explast · Eco Packaging</span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/explast-3.png" alt="Explast logo">
+        <span class="lt-cell-label">Explast · Eco Packaging</span>
+      </div>
+    </div>
+
+    <div class="logotypes-grid fi on">
+      <div class="lt-cell">
+        <img src="images/axia1.png" alt="Axia logo">
+        <span class="lt-cell-label">AXIA · Advisory</span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/axia2.png" alt="Axia logo">
+        <span class="lt-cell-label">AXIA · Advisory</span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/axia3.png" alt="Axia logo">
+        <span class="lt-cell-label">AXIA · Advisory</span>
+      </div>
+    </div>
+    <div class="logotypes-grid fi on">
+      <div class="lt-cell">
+        <img src="images/printbox1.png" alt="Printbox logo">
+        <span class="lt-cell-label">Printbox · Print Partner</span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/printbox2.png" alt="Printbox logo">
+        <span class="lt-cell-label">Printbox · Print Partner</span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/printbox3.png" alt="Printbox logo">
+        <span class="lt-cell-label">Printbox · Print Partner</span>
+      </div>
+    </div>
+    <div class="logotypes-grid fi on">
+      <div class="lt-cell">
+        <img src="images/cinezil.png" alt="Cinezil logo">
+        <span class="lt-cell-label">Cinezil Branding</span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/dreamy-destinations.png" alt="Dreamy-destinations logo">
+        <span class="lt-cell-label">Dreamy-destinations </span>
+      </div>
+      <div class="lt-cell">
+        <img src="images/smartjoe.png" alt="Smartjoe logo">
+        <span class="lt-cell-label">SmartJoe.mu Automated Secretary</span>
+      </div>
+    </div>
+
+    
+
+    <div class="proj-result" style="margin-top:10px;">
+      <div class="pr-bar"></div>
+      <div>
+        <div class="pr-label">Approach</div>
+        <div class="pr-text">Each brand identity built from strategic insight — understanding the client's market position, audience, and competitive landscape before a single mark is drawn.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- DIGITAL EXPERIENCES -->
+<section class="pg" id="digital-experiences">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">04</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">Digital <em>Experiences</em></h2>
+  </div>
+
+  <div class="de-intro fi on">
+    <div class="de-intro-tag">Website design · UI / UX · Landing pages · Digital products</div>
+    <p class="de-intro-headline">Website design, user interfaces, landing pages, and digital product concepts focused on both aesthetics and usability.</p>
+    <p class="de-intro-body">Thoughtfully crafted digital experiences that merge strategic design with intuitive functionality. From the Temple corporate website to bespoke landing pages and booking-enabled training platforms, each project is designed to elevate user engagement and support business growth.</p>
+  </div>
+
+  <div class="de-grid fi on">
+
+    <!-- Card 01 — Featured wide -->
+    <div class="de-card de-wide">
+      <div class="de-card-img">
+        <img src="images/Web-Screen-PSD-Mockup.png" alt="Temple Website">
+      </div>
+      <div class="de-card-body">
+        <div class="de-card-num">01 / 05</div>
+        <div class="de-card-title">Temple Website</div>
+        <div class="de-card-desc">Full web presence for Temple — architecture, layout system, and visual language built to reflect the brand's premium positioning.</div>
+        <span class="de-card-tag">Web Design · </span>
+      </div>
+    </div>
+
+    <!-- Card 02 -->
+    <div class="de-card">
+      <div class="de-card-img">
+        <img src="images/web-screen-06.png" alt="Bespoke Landing Page">
+      </div>
+      <div class="de-card-body">
+        <div class="de-card-num">02 / 05</div>
+        <div class="de-card-title">Bespoke Landing Pages</div>
+        <div class="de-card-desc">Conversion-focused landing page crafted for maximum impact — compelling layout, strategic copy hierarchy, and mobile-first design.</div>
+        <span class="de-card-tag">Landing Page · UI Design</span>
+      </div>
+    </div>
+
+    <!-- Card 03 -->
+    <div class="de-card">
+      <div class="de-card-img">
+        <img src="images/booking-system.png" alt="Training Platform">
+      </div>
+      <div class="de-card-body">
+        <div class="de-card-num">03 / 05</div>
+        <div class="de-card-title">Booking-Enabled Training Platform</div>
+        <div class="de-card-desc">Digital product concept for a fitness training platform — class scheduling, session booking flows, and a clean dashboard experience.</div>
+        <span class="de-card-tag">Product Design · UX</span>
+      </div>
+    </div>
+
+    <!-- Card 04 -->
+    <div class="de-card">
+      <div class="de-card-img">
+        <img src="images/web-screen-03.png" alt="UI Design Project">
+      </div>
+      <div class="de-card-body">
+        <div class="de-card-num">04 / 05</div>
+        <div class="de-card-title">Smartjoe UI Design Concept</div>
+        <div class="de-card-desc">Interface exploration — component system, visual rhythm, and interaction design focused on clarity and user delight.</div>
+        <span class="de-card-tag">UI Design · Concept</span>
+      </div>
+    </div>
+
+    <!-- Card 05 -->
+    <div class="de-card">
+      <div class="de-card-img">
+        <img src="images/footer-design.png" alt="Digital Product Concept">
+      </div>
+      <div class="de-card-body">
+        <div class="de-card-num">05 / 05</div>
+        <div class="de-card-title">Footer design</div>
+        <div class="de-card-desc">End-to-end digital product design — from wireframe to high-fidelity screens, balancing business objectives with seamless usability.</div>
+        <span class="de-card-tag">Product Design · Digital</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MAGAZINE / EDITORIAL -->
+<section class="pg" id="magazine" style="background:#140404;">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">05</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">Editorial <em>Magazine</em></h2>
+  </div>
+
+  <div class="fi on" style="max-width:900px;margin-bottom:3rem;">
+    <p style="font-family:var(--ff-disp);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:300;font-style:italic;color:var(--ink2);line-height:1.55;margin-bottom:.75rem;">A curated editorial — concept to print-ready spread.</p>
+    <p style="font-size:.8rem;font-weight:300;color:var(--ink3);line-height:1.9;">Full art direction, layout design, and typographic system crafted for an editorial publication. Flip through the pages below.</p>
+  </div>
+
+  <!-- Flipbook embed -->
+  <div class="fi on" style="width:100%;border:.5px solid var(--line);overflow:hidden;background:var(--ink);position:relative;">
+    <iframe
+      src="https://heyzine.com/flip-book/ae9317b9ed.html"
+      style="width:100%;height:620px;border:none;display:block;"
+      allow="fullscreen"
+      allowfullscreen
+      title="Editorial Magazine Flipbook"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <div class="fi d1 on" style="display:flex;justify-content:flex-end;margin-top:1rem;">
+    <a href="https://heyzine.com/flip-book/ae9317b9ed.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);text-decoration:none;border-bottom:.5px solid rgba(156,0,0,.3);padding-bottom:.2rem;transition:color .2s;">Open full flipbook ↗</a>
+  </div>
+</section>
+
+<!-- OTHER WORK -->
+<section class="pg" id="work">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">06</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">Photography & Art Direction<em> Campaigns</em></h2>
+  </div>
+  <div class="work-grid fi on">
+    <div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/cashmeer-collection.png" alt="Cashmeer Collection Campaign">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client">Shivani Manufacturer</span><span class="wk-year">2026</span></div>
+        <div class="wk-title">Cashmere Collection Campaign</div>
+        <div class="wk-desc">Creative campaign imagery designed to highlight the premium quality, comfort, and contemporary elegance of the Cashmere Collection through clean, minimalist visuals and refined styling.</div>
+        <div class="wk-tags"><span class="wk-tag">Digital Advertising</span><span class="wk-tag">Photography</span><span class="wk-tag">Creative Direction</span></div>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/ABC-Motors-Car-rental-Campaign.png" alt="ABC Motors Wedding Car Rental Campaign">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client">ABC Motors Car Rental</span><span class="wk-year">2019</span></div>
+        <div class="wk-title">ABC Motors Car Rental – Wedding Car Rental Campaign</div>
+        <div class="wk-desc">A premium advertising campaign created for ABC Car Rental to position its wedding fleet as the ideal choice for couples seeking elegance, comfort, and reliability.</div>
+        <div class="wk-tags"><span class="wk-tag">Photography</span><span class="wk-tag">Direction</span><span class="wk-tag">Luxury</span></div>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/Jona-Fashion-Designer.png" alt="Designer Wear Collection Campaign">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client">Jona-Fashion-Designer</span><span class="wk-year">2020</span></div>
+        <div class="wk-title">Jona Fashion Designer Wear Collection</div>
+        <div class="wk-desc">A premium fashion campaign designed for Jona Fashion to showcase its designer wear collection with elegance and style. The visual identity focused on modern sophistication, highlighting the quality, craftsmanship, and distinctive character of the garments while strengthening the brand's presence in the contemporary fashion market.</div>
+        <div class="wk-tags"><span class="wk-tag">Video</span><span class="wk-tag">Art Direction</span><span class="wk-tag">Photography</span></div>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/Tapis-Rouge-campaign.png" alt="Tapis Rouge – Footwear Campaign">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client">Tapis Rouge</span><span class="wk-year">2021</span></div>
+        <div class="wk-title">Tapis Rouge – Footwear Campaign</div>
+        <div class="wk-desc">A comprehensive fashion campaign created to celebrate Tapis Rouge’s identity as one of Mauritius' leading women's footwear brands. The project focused on presenting the collection through a modern and aspirational lens, highlighting versatility across casual, lifestyle, and occasion wear.</div>
+        <div class="wk-tags"><span class="wk-tag">Campaign Visuals</span><span class="wk-tag">Social Media Content</span></div>
+      </div>
+    </div>
+
+
+    <div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/Social-media-campaigns.png" alt="Social Media Campaign">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client">Social Media Campaigns</span><span class="wk-year"></span></div>
+        <div class="wk-title">Digital Social Media Campaigns</div>
+        <div class="wk-desc">A curated collection of dynamic social media campaigns crafted to engage audiences, build brand awareness, and drive digital impact through strategic storytelling, visuals, and platform-specific content.</div>
+        <div class="wk-tags"><span class="wk-tag">Design</span><span class="wk-tag">Social media</span></div>
+      </div>
+    </div>
+
+<div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/Corporate-photos.png" alt="Corporate Photography">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client">Corporate Portrait </span><span class="wk-year">2025</span></div>
+        <div class="wk-title">Corporate Portrait Photography</div>
+        <div class="wk-desc">Professional headshots that capture confidence, approachability, and professionalism, ideal for corporate profiles, executive branding, websites, and business communications.</div>
+        <div class="wk-tags"><span class="wk-tag">Portrait Photography</span><span class="wk-tag">Creative</span></div>
+      </div>
+    </div>
+
+<div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/Ai-Implementation-campaigns.png" alt="Ai-Implementation-campaigns ">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client">Printbox ltd </span><span class="wk-year">2026</span></div>
+        <div class="wk-title">Use of AI in Modern Product Photography - Printbox UI website rebranding</div>
+        <div class="wk-desc">For the Printbox Ltd rebranding website UI, AI was integrated into the creative workflow to enhance image quality, refine lighting, improve detail, and elevate overall product presentation—resulting in a more polished, consistent, and high-impact visual experience.</div>
+        <div class="wk-tags"><span class="wk-tag">Product Commercials</span><span class="wk-tag">Creative</span></div>
+      </div>
+    </div>
+
+<div class="wk">
+      <div class="wk">
+  <div class="wk-img">
+    <img src="images/Campaign-artworks.png" alt="Visual Retouching & Digital Painting-campaigns ">
+  </div>
+  
+</div>
+      <div class="wk-body">
+        <div class="wk-meta"><span class="wk-client"> </span><span class="wk-year"></span></div>
+        <div class="wk-title">Visual Retouching & Digital Painting Campaigns </div>
+        <div class="wk-desc">A curated collection showcasing advanced image editing and digital painting techniques. This segment highlights creative post-production, visual enhancement, and artistic transformation of visuals into refined, high-impact compositions.</div>
+        <div class="wk-tags"><span class="wk-tag">Visual Retouching</span><span class="wk-tag">Creative Photo Manipulation </span></div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- VIDEO WORKS -->
+<section class="pg" id="video-works">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">07</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">Social Media Video <em> Campaigns</em></h2>
+  </div>
+
+  <!-- CLIENT 1: Vatel Business School Mauritius — 7 videos -->
+  <div class="vw-client-block fi on">
+    <div class="vw-client-header">
+      <div class="vwch-left">
+        <div class="vw-client-label">Client · Education</div>
+        <div class="vw-client-name">Vatel Business School <em>Mauritius</em></div>
+      </div>
+      <div class="vwch-right">
+        <span class="vw-count-badge">7 Films</span>
+        <span>The Future We Are Building</span>
+      </div>
+    </div>
+    <div class="vw-grid cols-3" style="background:rgba(255,255,255,0.04);">
+
+      <!-- V1 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199883650">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199883650?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199883650.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">01 / 07</div>
+          <div class="vw-title">The Future We Are Building — Vol. I</div>
+          <div class="vw-desc">Vatel Mauritius brand film series — Gilbert Espitalier-Noel Shares insinghts about 'capturing student journeys, campus culture and the school's vision for hospitality education'.</div>
+          <a href="https://vimeo.com/1199883650" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- V2 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199883649">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199883649?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199883649.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">02 / 07</div>
+          <div class="vw-title">The Future We Are Building — Vol. II</div>
+          <div class="vw-desc">The second chapter in the Vatel series — testimonials, partnerships and the promise of an international education on Mauritian soil.</div>
+          <a href="https://vimeo.com/1199883649" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- V3 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199883421">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199883421?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199883421.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">03 / 07</div>
+          <div class="vw-title">The Future We Are Building — Vol. III</div>
+          <div class="vw-desc">Faculty profiles and academic excellence — positioning Vatel Mauritius as the leading hospitality management school in the Indian Ocean region.</div>
+          <a href="https://vimeo.com/1199883421" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- V4 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199749533">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199749533?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199749533.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">04 / 07</div>
+          <div class="vw-title">The Future We Are Building — Vol. IV</div>
+          <div class="vw-desc">A reflective video segment featuring the Director of 20C Sud Hotel as he shares insights on life after COVID-19, the challenges of reopening, and the resilience behind rebuilding hospitality. He speaks with honesty about recovery, renewed purpose. </div>
+          <a href="https://vimeo.com/1199749533" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- V5 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1200247099">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1200247099?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1200247099.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">05 / 07</div>
+          <div class="vw-title">The Future We Are Building — Vol. V</div>
+          <div class="vw-desc">Industry connections and alumni stories — illustrating the Vatel network and career outcomes that define the school's reputation.</div>
+          <a href="https://vimeo.com/1200247099" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- V6 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1200246203">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1200246203?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1200246203.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">06 / 07</div>
+          <div class="vw-title">Be our guest by Vatel</div>
+          <div class="vw-desc">International exchange programmes and be our guest by vatel.</div>
+          <a href="https://vimeo.com/1200246203" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- V7 — spans full width as a capstone -->
+<div class="vw-card" style="grid-column:1/-1;display:grid;grid-template-columns:1.6fr 1fr;">
+  <div class="vw-embed" data-vimeo-id="1199750820">
+    <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199750820?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+      <img src="https://vumbnail.com/1199750820.jpg" alt="Video thumbnail" loading="lazy">
+      <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+  </div>
+  <div class="vw-body" style="justify-content:center;padding:2.5rem 2.5rem;">
+    <div class="vw-num">07 / 07</div>
+    <div class="vw-title">The Future We Are Building — The Invitation</div>
+    <div class="vw-desc">Mr Renaud Azema, Director of Vatel Mauritius, invites students to join Vatel and pursue a rewarding career in the hospitality and tourism industry. — a sweeping portrait of Vatel Mauritius, its people, its mission and the future it is shaping for hospitality education in the region.</div>
+    <a href="https://vimeo.com/1199750820" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a> 
+  </div>
+</div>
+
+    </div><!-- /vw-grid -->
+  </div><!-- /vatel block -->
+
+  
+   
+
+ 
+<!-- CLIENT 3: Chamarel Rum Distillery — 1 video -->
+<div class="vw-client-block fi d1 on" style="margin-top:4px;">
+    <div class="vw-client-header">
+      <div class="vwch-left">
+        <div class="vw-client-label">Client · Luxury / Heritage</div>
+        <div class="vw-client-name">Commercial<em> Video Campaigns</em></div>
+      </div>
+      <div class="vwch-right">
+        <span class="vw-count-badge"></span>
+        <span>Craft &amp; Heritage</span>
+      </div>
+    </div>
+    <div class="vw-grid cols-2" style="background:rgba(255,255,255,0.04);">
+
+      <!-- C1 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199748464">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199748464?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199748464.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">01 / 01</div>
+          <div class="vw-title"> Chamarel — The Art of Rum </div>
+          <div class="vw-desc">A cinematic portrait of the Chamarel distillery — the sugarcane fields, the stills, the craft and the people behind one of Mauritius's most iconic premium rums.</div>
+          <a href="https://vimeo.com/1199748464" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- C2 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199748268">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199748268?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199748268.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">02 / 02</div>
+          <div class="vw-title">AppleTree Pay – Payments Made Simple Through WhatsApp </div>
+          <div class="vw-desc">Seamlessly blending convenience with innovation, this campaign showcases how AppleTree Pay enables users to send and receive payments directly through WhatsApp. The video highlights the speed, simplicity, and accessibility of digital transactions, transforming everyday messaging into a secure payment experience through engaging visual storytelling and motion design. Pay, Chat, and Connect — All in One Place.</div>
+          <a href="https://vimeo.com/1199748268" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+ </div>
+  </div><!-- /whatsapp block -->
+
+</section>
+
+
+  <!-- : Creative Video Collection —  -->
+  <div class="vw-client-block fi d1 on" style="margin-top:4px;">
+    <div class="vw-client-header">
+      <div class="vwch-left">
+        <div class="vw-client-label">Creative Video Collection</div>
+        <div class="vw-client-name">Creative Video <em>Collection</em></div>
+      </div>
+      <div class="vwch-right">
+        <span class="vw-count-badge"></span>
+        <span>Visual Storytelling &amp; Projects</span>
+      </div>
+    </div>
+    <div class="vw-grid cols-2" style="background:rgba(255,255,255,0.04);">
+
+      <!-- C1 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199746168">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199746168?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199746168.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">01 / 02</div>
+          <div class="vw-title"> Nestlé Honey Stars — Cereal Whole Grain Goodness, Honey-Powered Fun </div>
+          <div class="vw-desc">A vibrant and engaging campaign for Nestlé Honey Stars Whole Grain, bringing the excitement of breakfast to life through playful visuals and creative storytelling. Designed to highlight the cereal's wholesome goodness and irresistible honey taste, inspiring energetic starts to every day.</div>
+          <a href="https://vimeo.com/1199746168" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- C2 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1199882819">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1199882819?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1199882819.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">02 / 02</div>
+          <div class="vw-title">Printbox.mu — Your Brand, Perfectly Printed </div>
+          <div class="vw-desc">A dynamic promotional video created for PrintBox Mauritius, showcasing the power of high-quality printing through bold visuals, smooth transitions, and engaging storytelling. The campaign highlights PrintBox's ability to transform creative concepts into professional print solutions for businesses and individuals alike.</div>
+          <a href="https://vimeo.com/1199882819" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /chamarel block -->
+
+ 
+  <div class="vw-client-block fi d1 on" style="margin-top:4px;">
+    
+    
+      <div class="vwch-right">
+        
+        <span>Craft &amp; Premium</span>
+      </div>
+    </div>
+    <div class="vw-grid cols-2" style="background:rgba(255,255,255,0.04);">
+
+      <!-- C1 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1200253047">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1200253047?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1200253047.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">01 / 02</div>
+          <div class="vw-title">Karlos Excursion – Authentic Boat Tours in Mauritius Since 1988</div>
+          <div class="vw-desc">Discover the South West of Mauritius with Karlos Excursion, a family-run experience based at Le Morne Brabant. Since 1988, we’ve been welcoming guests on unforgettable sea journeys to crystal waters and the iconic Île aux Bénitiers. Highly rated on TripAdvisor and Google, our boat tours are crafted with passion, authenticity, and a strong commitment to guest satisfaction.</div>
+          <a href="https://vimeo.com/1200253047" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- C2 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1200266216">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1200266216?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1200266216.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">02 / 02</div>
+          <div class="vw-title">Win Champion Engineer — Train Like a Champion </div>
+          <div class="vw-desc">A high-impact gym commercial created to boost registrations and attract new clients. The concept focuses on strength, discipline, and transformation, positioning Win Champion Engineer as the place where real athletes are built and limits are broken.</div>
+          <a href="https://vimeo.com/1200266216" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Ai block -->
+   <!-- : Ai Video Collection —  -->
+  <div class="vw-client-block fi d1 on" style="margin-top:4px;">
+    <div class="vw-client-header">
+      <div class="vwch-left">
+        <div class="vw-client-label">AI Tools & Motion Creative Workflow</div>
+        <div class="vw-client-name">AI Assisted  <em>Media Production</em></div>
+      </div>
+      <div class="vwch-right">
+        <span class="vw-count-badge"></span>
+        <span>Video Commercial &amp; Campaign Projects</span>
+      </div>
+    </div>
+    <div class="vw-grid cols-2" style="background:rgba(255,255,255,0.04);">
+
+      <!-- C1 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1210738252">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1210738252?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1210738252.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">01 / 02</div>
+          <div class="vw-title"> Panasonic Vacuum Clean Promotion Video </div>
+          <div class="vw-desc">An exploration of AI-assisted product advertising: this vacuum cleaner video was built using generative AI for footage, along with AI voiceover and editing tools, to simulate a full commercial production pipeline..</div>
+          <a href="https://vimeo.com/1210738252" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+      <!-- C2 -->
+      <div class="vw-card">
+        <div class="vw-embed" data-vimeo-id="1210753039">
+          <div class="vw-poster" onclick="loadVimeo(this,'https://player.vimeo.com/video/1210753039?color=b85c38&title=0&byline=0&portrait=0&autoplay=1')">
+            <img src="https://vumbnail.com/1210753039.jpg" alt="Video thumbnail" loading="lazy">
+            <div class="vw-poster-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="vw-body">
+          <div class="vw-num">02 / 02</div>
+          <div class="vw-title">Galaxy - 35th anniversary </div>
+          <div class="vw-desc">An AI-assisted campaign video celebrating Galaxy's 35th anniversary, blending generative visuals with AI-driven editing to tell the story of three and a half decades of growth, trust, and milestones.</div>
+          <a href="https://vimeo.com/1210753039" target="_blank" rel="noopener" class="vw-link">Watch on Vimeo</a>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Ai block -->
+
+
+<!-- SERVICES -->
+<section class="pg" id="services">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">08</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">What <em>I do</em></h2>
+  </div>
+  <div class="svc-grid fi on">
+    <div class="svc"><div class="svc-n">I</div><div class="svc-title">Brand Identity &amp; Strategy</div><div class="svc-desc">Full brand systems — logo, type, colour, voice and guidelines. Built to scale and stay consistent across every touchpoint.</div></div>
+    <div class="svc"><div class="svc-n">II</div><div class="svc-title">Creative Direction</div><div class="svc-desc">Leading teams from brief to delivery — art direction, quality control, stakeholder alignment and creative standards at scale.</div></div>
+    <div class="svc"><div class="svc-n">III</div><div class="svc-title">Digital &amp; Campaign Design</div><div class="svc-desc">Social, digital advertising, email and content campaigns — strategically conceived and visually executed to drive real outcomes.</div></div>
+    <div class="svc"><div class="svc-n">IV</div><div class="svc-title">Photography &amp; Video</div><div class="svc-desc">End-to-end production — concept, shoot, edit, grade, deliver. Corporate, product, events and branded content.</div></div>
+    <div class="svc"><div class="svc-n">V</div><div class="svc-title">AI &amp; Emerging Visuals</div><div class="svc-desc">Prompt engineering, AI image generation and next-generation visual workflows — new tools with senior creative judgement.</div></div>
+    <div class="svc"><div class="svc-n">VI</div><div class="svc-title">Print &amp; Corporate Collateral</div><div class="svc-desc">Presentations, reports, pitch decks and all print — production-ready, on-brand and built for boardrooms and beyond.</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pg" id="contact">
+  <div class="s-eyebrow fi on">
+    <span class="s-eyebrow-num">09</span>
+    <div class="s-eyebrow-line"></div>
+    <h2 class="s-eyebrow-title">Let's <em>talk</em></h2>
+  </div>
+  <div class="contact-layout">
+    <div class="fi on">
+      <div class="contact-headline">Open to the<br><em>right opportunity.</em></div>
+      <p class="contact-sub">Senior design roles, brand lead positions, and select freelance projects. Based in Mauritius — available for remote and international opportunities.</p>
+      <a href="mailto:designyashgrahics@gmail.com" class="cta-btn">Send a message</a>
+    </div>
+    <div class="fi d2 on">
+      <div class="contact-details">
+        <div class="cd-item"><span class="cd-key">Email</span><span class="cd-val"><a href="mailto:designyashgrahics@gmail.com">designyashgrahics@gmail.com</a></span></div>
+        <div class="cd-item">
+  <span class="cd-key">Phone</span>
+  <a class="cd-val" href="tel:+23058157143">+230 58157143</a>
+</div>
+        <div class="cd-item"><span class="cd-key">Location</span><span class="cd-val">Poste de Flacq, Flacq, Mauritius</span></div>
+        
+        <div class="cd-item">
+  <span class="cd-key">LinkedIn</span>
+  <span class="cd-val">
+    <a href="https://www.linkedin.com/in/yash-auchoybur-565390253/" target="_blank" rel="noopener noreferrer">
+      yash-auchoybur
+    </a>
+  </span>
+</div>
+        <div class="cd-item"><span class="cd-key">Status</span><span class="cd-val"><span class="avail">Open to opportunities</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="ft-name">Adityasingh Auchoybur</span>
+  <span class="ft-r">© 2026 · Senior Graphic Designer · Mauritius</span>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  setTimeout(()=>{curR.style.left=e.clientX+'px';curR.style.top=e.clientY+'px';},70);
+});
+document.querySelectorAll('a,button,.tc,.wk,.svc,.proj,.lt-cell,.cs-cell').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='14px';cur.style.height='14px';curR.style.width='46px';curR.style.height='46px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='7px';cur.style.height='7px';curR.style.width='30px';curR.style.height='30px';});
+});
+// Hamburger menu
+const burger=document.getElementById('navBurger');
+const overlay=document.getElementById('navOverlay');
+burger.addEventListener('click',()=>{
+  burger.classList.toggle('open');
+  overlay.classList.toggle('open');
+});
+document.querySelectorAll('.nav-mo-link').forEach(a=>{
+  a.addEventListener('click',()=>{
+    burger.classList.remove('open');
+    overlay.classList.remove('open');
+  });
+});
+// Tap-to-play: replace poster with live iframe
+function loadVimeo(poster, playerUrl) {
+  const embed = poster.parentElement;
+  const iframe = document.createElement('iframe');
+  iframe.src = playerUrl;
+  iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+  iframe.allowFullscreen = true;
+  iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+  poster.replaceWith(iframe);
+}
+// Hide Vimeo embed placeholders when a real video ID is present
+document.querySelectorAll('.vw-embed iframe').forEach(iframe=>{
+  const src=iframe.getAttribute('src')||'';
+  if(src.includes('VIMEO_ID')){
+    iframe.style.display='none';
+  } else {
+    const ph=iframe.parentElement.querySelector('.vw-embed-ph');
+    if(ph) ph.style.display='none';
+  }
+});
+// Remove pre-set 'on' class so IntersectionObserver can handle all fade-ins properly
+document.querySelectorAll('.fi.on').forEach(el=>el.classList.remove('on'));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');}),{threshold:0.05});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+
+
+</body>
